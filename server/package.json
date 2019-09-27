@@ -1,0 +1,16 @@
+{
+    "name": "server",
+    "version": "0.1.0",
+    "scripts": {
+        "heroku:push": "heroku container:push web -a javiscript-paint",
+        "heroku:release": "heroku container:release web -a javiscript-paint",
+        "deploy": "npm run heroku:push && npm run heroku:release",
+        "start": "docker-compose up"
+    },
+    "dependencies": {
+        "dotenv": "^8.1.0",
+        "express": "^4.17.0",
+        "pm2": "^3.5.0",
+        "socket.io": "^2.3.0"
+    }
+}
