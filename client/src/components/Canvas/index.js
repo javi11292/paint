@@ -13,9 +13,9 @@ const Canvas = () => {
                 <canvas
                     width="1920"
                     height="1080"
-                    onMouseDown={toggleDrawing(true)}
-                    onMouseUp={toggleDrawing(false)}
-                    onMouseMove={addPoint}
+                    onPointerDown={toggleDrawing(true)}
+                    onPointerUp={toggleDrawing(false)}
+                    onPointerMove={addPoint}
                     ref={canvas}
                     className={classes.canvas} />
             </div>

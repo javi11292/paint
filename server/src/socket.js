@@ -3,7 +3,7 @@
 const io = require("socket.io")
 
 function listen(server) {
-    const socketServer = io(server)
+    const socketServer = io(server, { origins: "*:*" })
 
     socketServer.on("connect", socket => {
         socket.on("draw", points => {
