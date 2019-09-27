@@ -1,8 +1,7 @@
 import io from "socket.io-client"
 
-const HOST = "javiscript-paint.herokuapp.com"
-const PORT = 80
+const HOST = "https://javiscript-paint.herokuapp.com/"
 
-const socket = io(`https://${HOST}:${PORT}`)
+const socket = io(HOST)
 
 export default socket
