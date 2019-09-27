@@ -30,7 +30,10 @@ function useLogic() {
         if (points.length !== 2) return
         const [initial, current] = points
         const [ratioX, ratioY] = [canvas.current.width / canvas.current.clientWidth, canvas.current.height / canvas.current.clientHeight]
-        socket.emit("draw", [[ratioX * initial[0], ratioY * initial[1]], [ratioX * current[0], ratioY * current[1]]])
+        socket.emit("draw", [
+            [ratioX * initial[0], ratioY * initial[1]],
+            [ratioX * current[0], ratioY * current[1]]
+        ])
     }, [points])
 
     return { canvas, toggleDrawing, addPoint }
@@ -40,6 +43,7 @@ function draw(canvas: HTMLCanvasElement, points) {
     if (points.length !== 2) return
     const context = canvas.getContext("2d")
     context.fillStyle = "#000000"
+    context.lineWidth = 2
 
     const [initial, current] = points
 

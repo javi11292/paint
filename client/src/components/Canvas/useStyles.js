@@ -33,6 +33,7 @@ export default makeStyles(() => ({
     },
     canvas: {
         position: "absolute",
+        touchAction: "none",
         top: 0,
         left: 0,
         width: "100%",
