@@ -22,7 +22,7 @@ function useLogic() {
     }
 
     useEffect(() => {
-        socket.on("draw", points => draw(canvas.current, points))
+        socket.on("draw", points => draw(canvas.current.getContext("2d"), points))
         return () => socket.off("draw")
     }, [])
 
@@ -39,11 +39,11 @@ function useLogic() {
     return { canvas, toggleDrawing, addPoint }
 }
 
-function draw(canvas: HTMLCanvasElement, points) {
+function draw(context: CanvasRenderingContext2D, points) {
     if (points.length !== 2) return
-    const context = canvas.getContext("2d")
+    context.beginPath()
     context.fillStyle = "#000000"
-    context.lineWidth = 2
+    context.lineWidth = 10
 
     const [initial, current] = points
 
