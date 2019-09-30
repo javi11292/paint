@@ -1,13 +1,13 @@
 module.exports = {
     apps: [{
-        name: "paint",
-        script: 'index.js',
+        name: "server",
+        script: "index.js",
         "log_date_format": "DD/MM/YY HH:mm:ss",
-        instances: "1",
+        instances: "max",
         node_args: "-r dotenv/config",
     }, {
         name: "wake",
-        script: 'wake.js',
+        script: "wake.js",
         instances: "1",
     }],
 }

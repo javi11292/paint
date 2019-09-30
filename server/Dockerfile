@@ -7,4 +7,6 @@ RUN npm i -g pm2
 ADD . /code
 WORKDIR /code
 
-CMD pm2-runtime start ecosystem.config.js
+ENV ENV production
+
+CMD npm run start:${ENV}
