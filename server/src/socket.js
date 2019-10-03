@@ -4,7 +4,7 @@ const io = require("socket.io")
 const redisAdapter = require("socket.io-redis")
 
 function listen(server) {
-    const socketServer = io(server, { origins: "*:*" })
+    const socketServer = io(server)
     socketServer.adapter(redisAdapter(process.env.REDIS_URL || "redis://redis"))
     socketServer.on("connect", socket => {
         socket.on("draw", points => {
