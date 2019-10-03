@@ -38,7 +38,7 @@ const App = () => {
                         <Button onClick={handleClose(true)} color="primary">Actualizar</Button>
                     </DialogActions>
                 </Dialog>
-                
+
                 <Canvas />
             </MuiThemeProvider>
         </Store>
